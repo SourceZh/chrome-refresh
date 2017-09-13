@@ -1,0 +1,32 @@
+{
+  "name": "Auto Refresh",
+  "version": "1.2.4",
+  "manifest_version": 2,
+  "description": "Auto Refresh is the best extension to refresh on a timer",
+  "icons": {
+    "16": "icon.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_title": "Auto Refresh",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "page": "background.html"
+  },
+  "permissions": [
+  	"tabs", 
+    "http://elective.pku.edu.cn/*",
+  	"activeTab",
+  	"storage",
+  	"<all_urls>"
+  ],
+  "content_scripts":[
+    {
+      "matches": ["http://elective.pku.edu.cn/*"],
+      "js": ["static/js/jquery.js"]
+    }
+  ]
+}

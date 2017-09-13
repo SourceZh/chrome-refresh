@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Auto Refresh</title>
+        <link rel="stylesheet" type="text/css" href="static/css/main.css" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <body>
+        <header>Auto Refresh <span class="light">
+        <div id="time">
+            <section>
+                <input type="number" value="0" min="0" id="minutes" step="1" pattern="\d+" />
+                <span class="label">Minutes</span>
+            </section>
+            <section>
+                <input type="number" value="15" min="0" id="seconds" step="1" pattern="\d+" />
+                <span class="label">Seconds</span>
+            </section>
+            <section>
+                <button id="start">Start</button>
+                <button id="stop">Stop</button>
+                <span class="label"></span>
+            </section>
+        </div>
+        <div>
+            <span class="CourseName">Course Name:</span>
+            <input id="coursename" />
+        </div>
+        <script type="text/javascript" src="static/js/jquery.js"></script>
+        <script type="text/javascript" src="static/js/main.js"></script>
+    </body>
+</html>
