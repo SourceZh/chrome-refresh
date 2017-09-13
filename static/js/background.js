@@ -30,9 +30,12 @@
                         setTimeout(function() {
                             _timers[id].nextRefresh = (new Date).getTime() + _timers[id].interval + 999;
                         }, 1);
-                        chrome.tabs.executeScript(id, 
-                            {code:"alert($('.datagrid-even,.datagrid-odd').length);"}
-                            );
+                        chrome.tabs.sendRequest(id, { coursename: _timers[id].coursename }, function(response) {
+                            if (response.result){
+                                alert("You Get it!");
+                                timers.remove(id);
+                            }
+                        });
                     });
                 } else if (_timers[id]) {
                     var timeLeft = moment(_timers[id].nextRefresh - (new Date).getTime());
@@ -47,23 +50,5 @@
 
     // Set timers on the window object so we can access it from the popdown
     window.timers = timers;
-
-
-    (function(i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function() {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-
-    ga('create', 'UA-37022210-8', 'auto');
-    ga('set', 'checkProtocolTask', function() {});
-    ga('require', 'displayfeatures');
-    ga('send', 'pageview', '/background.html');
 
 })();
