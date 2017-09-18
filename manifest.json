@@ -4,13 +4,11 @@
   "manifest_version": 2,
   "description": "Auto refresh and inform your lesson in PKU Elective System",
   "icons": {
-    "16": "icon.png",
-    "48": "icon48.png",
-    "128": "icon128.png"
+    "128": "icon_128.png"
   },
   "browser_action": {
-    "default_icon": "icon.png",
-    "default_title": "Auto Refresh",
+    "default_icon": "icon_128.png",
+    "default_title": "Auto Elective Alert",
     "default_popup": "popup.html"
   },
   "background": {
