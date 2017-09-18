@@ -1,8 +1,8 @@
 {
-  "name": "Auto Refresh",
+  "name": "Auto Elective Alert",
   "version": "1.0",
   "manifest_version": 2,
-  "description": "Auto Refresh is the best extension to refresh on a timer",
+  "description": "Auto refresh and inform your lesson in PKU Elective System",
   "icons": {
     "16": "icon.png",
     "48": "icon48.png",
@@ -26,7 +26,7 @@
   "content_scripts":[
     {
       "matches": ["http://elective.pku.edu.cn/*"],
-      "js": ["jquery-3.2.1.min.js", "static/js/contentscript.js"]
+      "js": ["static/js/jquery.js", "static/js/contentscript.js"]
     }
   ]
 }
